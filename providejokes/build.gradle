@@ -1,0 +1,13 @@
+// TODO 17 ) Defining "java" for apply plugin
+apply plugin: 'java'
+
+// TODO 18 ) Defining dependencies for all jars in the libs directory
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+// TODO 19 ) Defining sourceCompatibility to define compatibility of java source as a "1.7"
+sourceCompatibility = JavaVersion.VERSION_1_7
+
+// TODO 19 ) Defining targetCompatibility to define target compatibility of java source as a "1.7"
+targetCompatibility = JavaVersion.VERSION_1_7
