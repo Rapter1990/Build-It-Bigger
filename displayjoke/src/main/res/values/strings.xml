@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">displayJoke</string>
     <string name="joke_not_found">Joke not found!</string>
-    <string name="intent_empty">Error: Intent Empty.</string>
+    <string name="intent_empty">Intent Empty.</string>
 </resources>
