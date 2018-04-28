@@ -35,7 +35,6 @@ dependencies {
     implementation project(':providejokes')
 
 
-
 }
 
 // TODO 34 ) Defining Google Cloud SDK Shell as an appengine
