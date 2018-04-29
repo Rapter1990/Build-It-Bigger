@@ -56,4 +56,6 @@ dependencies {
     implementation project(':providejokes')
     implementation project(':displayjoke')
 
+    // TODO 42 ) Implementing Butter Knife Dependency
+    implementation 'com.jakewharton:butterknife:8.8.1'
 }

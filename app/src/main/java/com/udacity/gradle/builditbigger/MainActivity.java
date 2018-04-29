@@ -1,14 +1,34 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import company.example.android.displayjoke.ShowJokeActivity;
 
-public class MainActivity extends AppCompatActivity {
+// TODO 43 ) Implementing EndpointsTaskListener of EndpointsAsyncTask
+public class MainActivity extends AppCompatActivity
+        implements EndpointsAsyncTask.EndpointsTaskListener{
+
+    // TODO 44 ) Defining the attributes(joke text,joke button and progress bar) of fragment_main.xml via ButterKnife
+    @BindView(R.id.joke_text_view)
+    private TextView jokeTextView;
+
+    @BindView(R.id.joke_button)
+    private Button jokeButton;
+
+    @BindView(R.id.progressBar)
+    private ProgressBar mProgressBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +59,52 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    // TODO 48 ) Telling Joke via EndpointsAsyncTask
     public void tellJoke(View view) {
-        Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
+
+        EndpointsAsyncTask task = new EndpointsAsyncTask();
+        task.setListener(this);
+        task.execute();
+
+        // TODO 51 ) Showing Progress Bar
+        showProgress();
     }
 
+
+    @Override
+    public void onComplete(String joke) {
+
+        // TODO 52 ) Calling displayJoke with sending joke as a String
+        displayJoke(joke);
+    }
+
+
+    // TODO 45 ) Showing Progress Bar
+    private void showProgress() {
+        jokeTextView.setVisibility(View.INVISIBLE);
+        jokeButton.setVisibility(View.INVISIBLE);
+        mProgressBar.setVisibility(View.VISIBLE);
+    }
+
+    // TODO 46 ) Hiding Progress Bar
+    private void hideProgress() {
+        jokeTextView.setVisibility(View.VISIBLE);
+        jokeButton.setVisibility(View.VISIBLE);
+        mProgressBar.setVisibility(View.INVISIBLE);
+    }
+
+    // TODO 49 ) Displaying Joke by opening a new Intent with its key value
+    private void displayJoke(String joke) {
+        Log.d("EndpointsAsyncTask", "joke is: " + joke);
+        Intent displayJokeActivityIntent =
+                new Intent(MainActivity.this, ShowJokeActivity.class);
+        Bundle extras = new Bundle();
+        extras.putString("jokeDisplay", joke);
+        displayJokeActivityIntent.putExtras(extras);
+
+        // TODO 50 ) Hiding Progress Bar
+        hideProgress();
+        startActivity(displayJokeActivityIntent);
+    }
 
 }
