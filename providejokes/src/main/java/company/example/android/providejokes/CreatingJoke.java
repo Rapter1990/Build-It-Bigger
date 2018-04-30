@@ -16,6 +16,7 @@ public class CreatingJoke  {
     // TODO 14 ) Defining joke as a String
     private static String joke = "";
 
+
     // TODO 4 ) Creating a jokeCreation method to create jokes
     private static HashMap<Integer,String> jokeCreation(){
 
@@ -30,7 +31,7 @@ public class CreatingJoke  {
         jokeList.put(3," Anton, do you think I’m a bad mother?" +
                 "\n" +
                 "My name is Paul.");
-        jokeList.put(4,"Patient: Oh doctor, I\"'\"m just so nervous. This is my first operation." +
+        jokeList.put(4,"Patient: Oh doctor, I\\u0027m just so nervous. This is my first operation." +
                 "\n" +
                 "Doctor: Don't worry. Mine too.");
 
