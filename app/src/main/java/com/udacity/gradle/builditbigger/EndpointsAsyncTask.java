@@ -17,6 +17,11 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
     private static MyApi myApiService = null;
     private EndpointsTaskListener mListener = null;
 
+    // TODO 58 ) Defining empty constructor
+    public EndpointsAsyncTask(){
+
+    }
+
     // TODO 54 ) Defining a constructor to set listener
     public EndpointsAsyncTask(EndpointsTaskListener endpointsTaskListener) {
         mListener = endpointsTaskListener;
