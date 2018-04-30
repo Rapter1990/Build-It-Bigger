@@ -66,8 +66,8 @@ public class MainActivity extends AppCompatActivity
     // TODO 48 ) Telling Joke via EndpointsAsyncTask
     public void tellJoke(View view) {
 
-        EndpointsAsyncTask task = new EndpointsAsyncTask();
-        task.setListener(this);
+        EndpointsAsyncTask task = new EndpointsAsyncTask(this);
+        //task.setListener(this);
         task.execute();
 
         // TODO 51 ) Showing Progress Bar

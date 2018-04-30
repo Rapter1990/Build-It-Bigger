@@ -17,6 +17,12 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
     private static MyApi myApiService = null;
     private EndpointsTaskListener mListener = null;
 
+    // TODO 54 ) Defining a constructor to set listener
+    public EndpointsAsyncTask(EndpointsTaskListener endpointsTaskListener) {
+        mListener = endpointsTaskListener;
+    }
+
+
     // TODO 39 ) Creating EndpointsTaskListener interface to check whether jokes are displayed or not via onComplete
     public static interface EndpointsTaskListener {
         public void onComplete(String joke);
@@ -29,9 +35,9 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
                     // options for running against local devappserver
-                    // - 10.0.2.2 is localhost's IP address in Android emulator
+                    // - 10.0.3.2 is localhost's IP address in Android emulator
                     // - turn off compression when running against local devappserver
-                    .setRootUrl("http://10.0.2.2:8080/_ah/api/")
+                    .setRootUrl("http://10.0.3.2:8080/_ah/api/")
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
                         public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) throws IOException {
