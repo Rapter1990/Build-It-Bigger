@@ -31,7 +31,7 @@ public class CreatingJoke  {
         jokeList.put(3," Anton, do you think I’m a bad mother?" +
                 "\n" +
                 "My name is Paul.");
-        jokeList.put(4,"Patient: Oh doctor, I’m just so nervous. This is my first operation." +
+        jokeList.put(4,"Patient: Oh doctor, I\"’\"m just so nervous. This is my first operation." +
                 "\n" +
                 "Doctor: Don't worry. Mine too.");
 
