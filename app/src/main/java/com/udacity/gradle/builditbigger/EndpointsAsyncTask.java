@@ -72,7 +72,7 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
     // TODO 47 ) Setting EndpointsTaskListener and Returning it
     public EndpointsAsyncTask setListener(EndpointsTaskListener listener) {
         this.mListener = listener;
-        return (EndpointsAsyncTask) mListener;
+        return this;
     }
 }
 
