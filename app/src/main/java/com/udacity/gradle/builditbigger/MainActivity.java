@@ -22,13 +22,13 @@ public class MainActivity extends AppCompatActivity
 
     // TODO 44 ) Defining the attributes(joke text,joke button and progress bar) of fragment_main.xml via ButterKnife
     @BindView(R.id.joke_text_view)
-    private TextView jokeTextView;
+    TextView jokeTextView;
 
     @BindView(R.id.joke_button)
-    private Button jokeButton;
+    Button jokeButton;
 
     @BindView(R.id.progressBar)
-    private ProgressBar mProgressBar;
+    ProgressBar mProgressBar;
 
 
     @Override
