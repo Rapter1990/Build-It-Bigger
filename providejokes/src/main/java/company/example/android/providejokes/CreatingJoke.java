@@ -27,13 +27,13 @@ public class CreatingJoke  {
                 "Snowballs.");
         jokeList.put(2,"Can a kangaroo jump higher than a house?" +
                 "\n" +
-                "Of course, a house doesn’t jump at all.");
-        jokeList.put(3," Anton, do you think I’m a bad mother?" +
+                "Of course, a house doesn\u0027t jump at all.");
+        jokeList.put(3," Anton, do you think I\u0027m a bad mother?" +
                 "\n" +
                 "My name is Paul.");
-        jokeList.put(4,"Patient: Oh doctor, I'm just so nervous. This is my first operation." +
+        jokeList.put(4,"Patient: Oh doctor, I\u0027m just so nervous. This is my first operation." +
                 "\n" +
-                "Doctor: Don't worry. Mine too.");
+                "Doctor: Don\u0027t worry. Mine too.");
 
         // TODO 6 ) Returning jokeList
         return jokeList;

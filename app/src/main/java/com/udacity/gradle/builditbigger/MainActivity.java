@@ -72,11 +72,12 @@ public class MainActivity extends AppCompatActivity
 
         // TODO 51 ) Showing Progress Bar
         showProgress();
+
     }
 
 
     @Override
-    public void onComplete(String joke) {
+    public void onComplete(final String joke) {
 
         // TODO 52 ) Calling displayJoke with sending joke as a String
         displayJoke(joke);
