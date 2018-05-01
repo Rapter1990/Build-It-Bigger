@@ -12,6 +12,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import company.example.android.displayjoke.ShowJokeActivity;
@@ -30,6 +34,9 @@ public class MainActivity extends AppCompatActivity
     @BindView(R.id.progressBar)
     ProgressBar mProgressBar;
 
+    // TODO 61 ) Adding Interstitial Ads
+    private InterstitialAd mInterstitial;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +45,15 @@ public class MainActivity extends AppCompatActivity
 
         // TODO 53 ) Implementing ButterKnife
         ButterKnife.bind(this);
+
+        // TODO 62 ) Defining Interstitial Ads
+        mInterstitial = new InterstitialAd(this);
+        mInterstitial.setAdUnitId(getString(R.string.interstitial_Ads_Unit_Id));
+        AdRequest request = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+        mInterstitial.loadAd(request);
+
     }
 
 
@@ -79,8 +95,23 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onComplete(final String joke) {
 
-        // TODO 52 ) Calling displayJoke with sending joke as a String
-        displayJoke(joke);
+        // TODO 63 ) Checking whether InterstitialAd is loaded or not
+        if (mInterstitial.isLoaded()) {
+            // TODO 64 ) Showing InterstitialAd
+            mInterstitial.show();
+            // TODO 65 ) Displaying the ad after the user hits the button
+            mInterstitial.setAdListener(new AdListener(){
+                @Override
+                public void onAdClosed() {
+                    super.onAdClosed();
+                    displayJoke(joke);
+                }
+            });
+        }else{
+            // TODO 52 ) Calling displayJoke with sending joke as a String
+            displayJoke(joke);
+        }
+
     }
 
 

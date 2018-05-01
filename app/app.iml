@@ -259,9 +259,5 @@
     <orderEntry type="library" name="Gradle: com.android.support:support-v13-27.1.1" level="project" />
     <orderEntry type="module" module-name="providejokes" />
     <orderEntry type="module" module-name="displayjoke" />
-    <orderEntry type="module" module-name="providejokes" />
-    <orderEntry type="module" module-name="displayjoke" />
-    <orderEntry type="module" module-name="providejokes" />
-    <orderEntry type="module" module-name="displayjoke" />
   </component>
 </module>
