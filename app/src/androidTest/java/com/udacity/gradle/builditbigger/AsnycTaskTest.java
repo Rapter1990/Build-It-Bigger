@@ -44,7 +44,7 @@ public class AsnycTaskTest {
         // TODO 57 ) Successfully retrieving a non-empty string
         assertFalse(TextUtils.isEmpty(jokeTestTask));
 
-        // TODO 59 ) Successfully retrieving a non-empty string as a Result
+        // TODO 59 ) Successfully retrieving a non-empty string as a result
         assertNotNull(result);
     }
 }
